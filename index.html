@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сетевое оборудование</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Стили для индикатора активной страницы */
+        .active-nav-item {
+          border-bottom: 4px solid white; /* Белая полоса под активным элементом навигации */
+          padding-bottom: 0.5rem; /* Небольшой отступ снизу */
+        }
+      </style>
+</head>
+<body>
+    <header class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl">С-31</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:text-gray-400 active-nav-item">Главная</a></li>
+                    <li><a href="office-plans.html" class="hover:text-gray-400">Планы офисов</a></li> 
+                    <li><a href="equipment.html" class="hover:text-gray-400">Обзор оборудования</a></li>
+                    <li><a href="setup-instructions.html" class="hover:text-gray-400">Инструкции по настройке</a></li>
+                    <li><a href="https://t.me/Petliyakp11Bot" target="_blank" class="hover:text-gray-400">Feedback</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container mx-auto mt-8">
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Добро пожаловать на наш сайт</h2>
+            <p>Ваш надежный помощник в мире сетевого оборудования для офисного здания. В современном бизнесе надежная и эффективная сетевая инфраструктура играет ключевую роль в успехе компании. Наш сайт предлагает всестороннее руководство по выбору, настройке и управлению сетевым оборудованием, обеспечивая бесперебойную работу вашего офиса.</p>
+            <p>Цель нашего ресурса - сделать сложный процесс выбора сетевого оборудования простым и понятным. Мы предоставляем актуальные рекомендации, обзоры устройств и пошаговые инструкции по настройке, чтобы вы могли оптимизировать работ у вашей офисной сети, повысить ее надежность и безопасность.</p>
+            <p>На нашем сайте вы найдете:</p>
+            <ul class="list-disc pl-5">
+                <li>Подробные обзоры и сравнения сетевого оборудования.</li>
+                <li>Рекомендации по выбору оборудования, исходя из специфики вашего бизнеса и офисного пространства.</li>
+                <li>Пошаговые руководства по настройке и оптимизации сети, адаптированные под различные уровни сложности и технические нужды.</li>
+                <li>Советы по обеспечению безопасности сети, чтобы защитить вашу корпоративную информацию от внешних угроз.</li>
+            </ul>
+            <p>Мы стремимся сделать ваш опыт выбора и настройки сетевого оборудования как можно более эффективным и безболезненным. Воспользуйтесь нашими ресурсами для создания надежной и производительной сетевой инфраструктуры, которая станет крепким фундаментом для вашего бизнеса.</p>
+        </section>
+        <section class="grid grid-cols-2 gap-4">
+            <!-- Визуальные элементы с иконками -->
+            <div class="bg-gray-200 p-4 rounded flex flex-col items-center justify-center h-64">
+                <h3 class="font-bold mb-3">Маршрутизаторы</h3>
+                <img src="images/router-icon.png" alt="Маршрутизаторы" class="max-h-full">
+            </div>
+            <div class="bg-gray-200 p-4 rounded flex flex-col items-center justify-center h-64">
+                <h3 class="font-bold mb-3">Коммутаторы</h3>
+                <img src="images/switch-icon.png" alt="Коммутаторы" class="max-h-full">
+            </div>
+            <div class="bg-gray-200 p-4 rounded flex flex-col items-center justify-center h-64">
+                <h3 class="font-bold mb-3">Межсетевые экраны</h3>
+                <img src="images/firewall.png" alt="Межсетевые экраны" class="max-h-full">
+            </div>     
+            <div class="bg-gray-200 p-4 rounded flex flex-col items-center justify-center h-64">
+                <h3 class="font-bold mb-3">Кабеля</h3>
+                <img src="images/patch.png" alt="Кабеля" class="max-h-full">
+            </div>        
+            
+            <!-- Дополнительные элементы -->
+        </section>
+    </main>
+    
+</body>
+</html>

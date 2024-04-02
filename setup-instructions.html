@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструкции по настройке</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      body { background-color: rgb(240,240,240); }
+      .hover-effect:hover { box-shadow: 0 0 8px rgba(30, 144, 255, 0.8); transition: box-shadow 0.3s ease-in-out; }
+      .info-block { background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin-top: 20px; }
+      .info-block img { max-width: 100%; height: auto; display: block; margin: 20px auto; border-radius: 10px; }
+      .custom-image { width: 500px; height: auto; }
+      .active-nav-item { border-bottom: 4px solid rgb(255, 255, 255); padding-bottom: 0.5rem; }
+      .code-block {
+        background-color: #f5f5f5; /* Серый фон */
+        border-left: 4px solid #007bff; /* Голубая полоса слева */
+        padding: 12px; /* Внутренние отступы */
+        font-family: 'Courier New', Courier, monospace; /* Моноширинный шрифт */
+        color: #333; /* Цвет текста */
+        font-size: 0.95em; /* Размер шрифта */
+        overflow: auto; /* Прокрутка при необходимости */
+        max-width: 600px; /* Максимальная ширина блока */
+        margin: 0 auto 20px; /* Выравнивание по центру и отступ снизу */
+        white-space: pre-wrap; /* Перенос слов */
+        word-wrap: break-word; /* Разрыв строки */
+    }
+    .code-block pre {
+        margin: 0; /* Убираем внешние отступы */
+        padding: 0.5em; /* Небольшой внутренний отступ */
+        overflow: auto; /* Авто-прокрутка, если содержимое выходит за пределы блока */
+        white-space: pre-wrap; /* Перенос строк для длинных строк кода */
+        word-wrap: break-word; /* Перенос слов, если они не помещаются в одну строку */
+        line-height: 1.5; /* Высота строки для лучшей читаемости */
+        /* Остальные стили... */
+    }
+    
+    
+      /* Стили для кнопки копирования */
+      .copy-button {
+        background-color: #007bff; /* Фоновый цвет */
+        color: white; /* Цвет текста */
+        border: none; /* Убираем границу */
+        padding: 10px 15px; /* Внутренние отступы */
+        border-radius: 5px; /* Скругление углов */
+        cursor: pointer; /* Курсор в виде руки */
+        font-size: 0.85em; /* Размер текста */
+      }
+    </style>
+</head>
+<body>
+    <header class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl">С-31</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:text-gray-400">Главная</a></li>
+                    <li><a href="office-plans.html" class="hover:text-gray-400">Планы офисов</a></li>
+                    <li><a href="equipment.html" class="hover:text-gray-400">Обзор оборудования</a></li>
+                    <li><a href="setup-instructions.html" class="hover:text-gray-400 active-nav-item">Инструкции по настройке</a></li>
+                    <li><a href="https://t.me/Petliyakp11Bot" target="_blank" class="hover:text-gray-400">Feedback</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container mx-auto mt-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Инструкции по настройке</h2>
+        <div class="grid grid-cols-3 gap-4">
+            <div class="rounded flex flex-col items-center justify-center h-64 bg-cover bg-center relative hover-effect" onclick="showText('routers')" style="background-image: url('images/router-icon.png');">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+                <h3 class="font-bold mb-3 text-white z-10">Маршрутизаторы</h3>
+            </div>
+            <div class="rounded flex flex-col items-center justify-center h-64 bg-cover bg-center relative hover-effect" onclick="showText('switches')" style="background-image: url('images/switch-icon.png');">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+                <h3 class="font-bold mb-3 text-white z-10">Коммутаторы</h3>
+            </div>
+            <div class="rounded flex flex-col items-center justify-center h-64 bg-cover bg-center relative hover-effect" onclick="showText('firewalls')" style="background-image: url('images/firewall.png');">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+                <h3 class="font-bold mb-3 text-white z-10">Межсетевые экраны</h3>
+            </div>
+        </div>
+        <div id="setup-text" class="mt-8">
+            <!-- Content for each setup category will be dynamically inserted here -->
+        </div>
+    </main>
+    
+        <script>
+            function showText(category) {
+                var content = '';
+                switch(category) {
+                            case 'routers':
+            content = `<div class="info-block" id="router-setup">
+                          <h1>Настройка Маршрутизаторов</h1>
+                          <p>Процесс настройки маршрутизатора может варьироваться в зависимости от модели и производителя, но базовые шаги обычно включают в себя установку пароля, настройку сетевых интерфейсов и конфигурацию маршрутизации. Ниже приведен общий пример настройки маршрутизатора Cisco.</p>
+                          <h2>Шаг 1: Установка пароля</h2>
+                          <div class="code-block">
+                            <pre>enable secret ваш_секретный_пароль
+configure terminal
+line vty 0 4
+password ваш_пароль
+login
+exit</pre>
+                          </div>
+                          <button class="copy-button" onclick="copyToClipboard('router-setup')">Копировать</button>
+                          <h2>Шаг 2: Настройка интерфейса</h2>
+                          <div class="code-block">
+<pre>configure terminal
+interface GigabitEthernet0/0
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+exit</pre>
+                          </div>
+                          <button class="copy-button" onclick="copyToClipboard('router-setup')">Копировать</button>
+                          <h2>Шаг 3: Настройка маршрутизации</h2>
+                          <div class="code-block">
+                            <pre>configure terminal
+ip route 0.0.0.0 0.0.0.0 [IP-адрес следующего узла]</pre>
+                          </div>
+                          <button class="copy-button" onclick="copyToClipboard('router-setup')">Копировать</button>
+                      </div>`;
+            break;
+            case 'switches':
+            content = `<div class="info-block">
+                          <h2>Коммутаторы: Инструкция по настройке</h2>
+                          <p>Настройка коммутатора обычно включает конфигурацию VLAN, управление портами и настройку безопасности. Ниже приведен пример настройки для коммутатора Cisco.</p>
+                          <div class="code-block">
+        <pre>enable
+        configure terminal
+        vlan 10
+        name Management
+        exit
+        interface range gigabitEthernet 0/1-10
+        switchport mode access
+        switchport access vlan 10
+        exit</pre>
+                          </div>
+                          <button class="copy-button" onclick="copyToClipboard('switch-setup')">Копировать</button>
+                          <p>Не забудьте сохранить конфигурацию:</p>
+                          <div class="code-block">
+                              <pre>write memory</pre>
+                          </div>
+                          <button class="copy-button" onclick="copyToClipboard('switch-setup')">Копировать</button>
+                      </div>`;
+            break;
+        
+            case 'firewalls':
+            content = `<div class="info-block">
+                          <h2>Межсетевые экраны: Инструкция по настройке</h2>
+                          <p>Настройка межсетевого экрана включает определение политик безопасности, создание правил фильтрации и настройку VPN. Пример ниже показывает базовую настройку для межсетевого экрана Fortinet.</p>
+                          <div class="code-block">
+                              <pre>config firewall policy
+        edit 1
+        set srcintf "lan"
+        set dstintf "wan"
+        set srcaddr "all"
+        set dstaddr "all"
+        set action accept
+        set schedule "always"
+        set service "ALL"
+        end</pre>
+                          </div>
+                          <button class="copy-button" onclick="copyToClipboard('firewalls-setup')">Копировать</button>
+                          <p>Эти команды создадут политику, которая проводит весь трафик через межсетевой экран. Всегда настраивайте более строгие правила в зависимости от потребностей безопасности вашей сети.</p>
+                       </div>`;
+            break;
+        
+                }
+                document.getElementById('setup-text').innerHTML = content;
+            }
+            function copyToClipboard(elementId) {
+                var copyText = document.querySelector(`#${elementId} code`).innerText;
+                navigator.clipboard.writeText(copyText).then(function() {
+                    alert('Текст скопирован');
+                }, function(err) {
+                    console.error('Ошибка при копировании: ', err);
+                });
+            }
+           
+            
+            document.getElementById('setup-text').innerHTML = content;
+            function copyToClipboard(elementId) {
+                var copyText = document.getElementById(elementId).innerText;
+                navigator.clipboard.writeText(copyText).then(function() {
+                    alert('Текст скопирован');
+                }, function(err) {
+                    console.error('Ошибка при копировании: ', err);
+                });
+            }
+        
+    </script>
+</body>
+</html>
